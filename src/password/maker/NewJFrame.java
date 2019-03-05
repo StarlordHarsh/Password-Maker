@@ -193,6 +193,18 @@ public class NewJFrame extends javax.swing.JFrame {
                     int opt = rand.nextInt(2);
                     password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : rand.nextInt(14) + 33);
                 }
+                if (chcap == false && chsmall == true && chnum == false && chspec == true) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 97 : rand.nextInt(14) + 33);
+                }
+                if (chcap == false && chsmall == true && chnum == true && chspec == false) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 97 : rand.nextInt(9) + 48);
+                }
+                if (chcap == false && chsmall == false && chnum == true && chspec == true) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(9) + 48 : rand.nextInt(14) + 33);
+                }
                 if (chcap == true && chsmall == true && chnum == true && chspec == false) {
                     int opt = rand.nextInt(3);
                     password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : (opt==1)?rand.nextInt(26) + 97:rand.nextInt(9) + 48);
@@ -200,6 +212,18 @@ public class NewJFrame extends javax.swing.JFrame {
                 if (chcap == true && chsmall == true && chnum == false && chspec == true) {
                     int opt = rand.nextInt(3);
                     password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : (opt==1)?rand.nextInt(26) + 97:rand.nextInt(14) + 33);
+                }
+                if (chcap == true && chsmall == false && chnum == true && chspec == true) {
+                    int opt = rand.nextInt(3);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : (opt==1)?rand.nextInt(26) + 97:rand.nextInt(14) + 33);
+                }
+                if (chcap == false && chsmall == true && chnum == true && chspec == true) {
+                    int opt = rand.nextInt(3);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 97 : (opt==1)?rand.nextInt(9) + 48:rand.nextInt(14) + 33);
+                }
+                if (chcap == true && chsmall == true && chnum == true && chspec == true) {
+                    int opt = rand.nextInt(4);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : (opt==1)?rand.nextInt(26) + 97: (opt==2)?rand.nextInt(9) + 48:rand.nextInt(14) + 33);
                 }
                 val--;
             }
