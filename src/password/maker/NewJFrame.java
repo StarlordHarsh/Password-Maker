@@ -158,26 +158,10 @@ public class NewJFrame extends javax.swing.JFrame {
         Labword.setText("No. of Words-" + Integer.toString(Slider.getValue()));
         //for(int i=0;i<2;i++)
         {
-        if (Chkcap.isSelected()) {
-            chcap = true;
-        } else {
-            chcap = false;
-        }
-        if (Chksmall.isSelected()) {
-            chsmall = true;
-        } else {
-            chsmall = false;
-        }
-        if (Chknum.isSelected()) {
-            chnum = true;
-        } else {
-            chnum = false;
-        }
-        if (Chkspec.isSelected()) {
-            chspec = true;
-        } else {
-            chspec = false;
-        }
+        chcap = Chkcap.isSelected();
+        chsmall = Chksmall.isSelected();
+        chnum = Chknum.isSelected();
+        chspec = Chkspec.isSelected();
         Random rand = new Random();
         Passlabel.setText(chcap + " " + chsmall+" "+chnum+" "+chspec);
         }
