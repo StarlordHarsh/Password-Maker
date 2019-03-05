@@ -189,7 +189,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 int r = rand.nextInt(14)+33;
                 password+=(char)r;
             }
+            if (chcap == true && chsmall == true && chnum == false && chspec == false)
+            {
+                int r = rand.nextInt(14)+33;
+                password+=(char)r;
+            }
             val--;
+            //okkka
             }
             Passlabel.setText(password);
         }
