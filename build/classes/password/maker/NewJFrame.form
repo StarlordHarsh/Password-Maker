@@ -111,6 +111,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Small"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChksmallActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="Chkcap">
           <Properties>
@@ -130,6 +133,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Numbers"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChknumActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="Chkspec">
           <Properties>
@@ -138,6 +144,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Special Characters"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChkspecActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
