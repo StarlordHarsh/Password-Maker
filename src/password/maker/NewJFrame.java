@@ -14,7 +14,10 @@ import java.util.Random;
 public class NewJFrame extends javax.swing.JFrame {
 
     String password = "";
-    int choice = 0;
+    boolean chsmall = false;
+    boolean chcap = false;
+    boolean chnum = false;
+    boolean chspec = false;
 
     /**
      * Creates new form NewJFrame
@@ -23,7 +26,6 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -154,38 +156,50 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderStateChanged
         Labword.setText("No. of Words-" + Integer.toString(Slider.getValue()));
-        Random rand = new Random();
-        switch(choice)
+        //for(int i=0;i<2;i++)
         {
-            case 0: Passlabel.setText("0");
-                break;
-            case 1: Passlabel.setText("1");
-                break;
-            case 2:Passlabel.setText("2");
-                break;
-            case 3 :Passlabel.setText("3");
-                break;
-                    
+        if (Chkcap.isSelected()) {
+            chcap = true;
+        } else {
+            chcap = false;
+        }
+        if (Chksmall.isSelected()) {
+            chsmall = true;
+        } else {
+            chsmall = false;
+        }
+        if (Chknum.isSelected()) {
+            chnum = true;
+        } else {
+            chnum = false;
+        }
+        if (Chkspec.isSelected()) {
+            chspec = true;
+        } else {
+            chspec = false;
+        }
+        Random rand = new Random();
+        Passlabel.setText(chcap + " " + chsmall+" "+chnum+" "+chspec);
         }
     }//GEN-LAST:event_SliderStateChanged
 
     private void ChkcapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkcapActionPerformed
-        choice = 0;
+        
         SliderStateChanged(null);
     }//GEN-LAST:event_ChkcapActionPerformed
 
     private void ChksmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChksmallActionPerformed
-        choice = 1;
+        
         SliderStateChanged(null);
     }//GEN-LAST:event_ChksmallActionPerformed
 
     private void ChknumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChknumActionPerformed
-        choice = 2;
+        
         SliderStateChanged(null);
     }//GEN-LAST:event_ChknumActionPerformed
 
     private void ChkspecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkspecActionPerformed
-        choice = 3;
+        chspec = true;
         SliderStateChanged(null);
     }//GEN-LAST:event_ChkspecActionPerformed
 
