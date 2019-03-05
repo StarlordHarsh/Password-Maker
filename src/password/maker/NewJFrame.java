@@ -155,30 +155,58 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderStateChanged
-        Labword.setText("No. of Words-" + Integer.toString(Slider.getValue()));
+        Passlabel.setText("");
+        password="";
+        int val=Slider.getValue();
+        Labword.setText("No. of Words-" + Integer.toString(val));
         //for(int i=0;i<2;i++)
         {
-        chcap = Chkcap.isSelected();
-        chsmall = Chksmall.isSelected();
-        chnum = Chknum.isSelected();
-        chspec = Chkspec.isSelected();
-        Random rand = new Random();
-        Passlabel.setText(chcap + " " + chsmall+" "+chnum+" "+chspec);
+            chcap = Chkcap.isSelected();
+            chsmall = Chksmall.isSelected();
+            chnum = Chknum.isSelected();
+            chspec = Chkspec.isSelected();
+            Random rand = new Random();
+            //Passlabel.setText(chcap + " " + chsmall+" "+chnum+" "+chspec);
+            while(val!=0)
+            {
+            if (chcap == true && chsmall == false && chnum == false && chspec == false)
+            {
+                int r = rand.nextInt(26)+65;
+                password+=(char)r;
+            }
+            if (chcap == false && chsmall == true && chnum == false && chspec == false)
+            {
+                int r = rand.nextInt(26)+97;
+                password+=(char)r;
+            }
+            if (chcap == false && chsmall == false && chnum == true && chspec == false)
+            {
+                int r = rand.nextInt(9)+48;
+                password+=(char)r;
+            }
+            if (chcap == false && chsmall == false && chnum == false && chspec == true)
+            {
+                int r = rand.nextInt(14)+33;
+                password+=(char)r;
+            }
+            val--;
+            }
+            Passlabel.setText(password);
         }
     }//GEN-LAST:event_SliderStateChanged
 
     private void ChkcapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkcapActionPerformed
-        
+
         SliderStateChanged(null);
     }//GEN-LAST:event_ChkcapActionPerformed
 
     private void ChksmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChksmallActionPerformed
-        
+
         SliderStateChanged(null);
     }//GEN-LAST:event_ChksmallActionPerformed
 
     private void ChknumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChknumActionPerformed
-        
+
         SliderStateChanged(null);
     }//GEN-LAST:event_ChknumActionPerformed
 
