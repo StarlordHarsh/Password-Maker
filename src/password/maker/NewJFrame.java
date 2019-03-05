@@ -156,8 +156,9 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderStateChanged
         Passlabel.setText("");
-        password="";
-        int val=Slider.getValue();
+        password = "";
+        int r;
+        int val = Slider.getValue();
         Labword.setText("No. of Words-" + Integer.toString(val));
         //for(int i=0;i<2;i++)
         {
@@ -167,35 +168,36 @@ public class NewJFrame extends javax.swing.JFrame {
             chspec = Chkspec.isSelected();
             Random rand = new Random();
             //Passlabel.setText(chcap + " " + chsmall+" "+chnum+" "+chspec);
-            while(val!=0)
-            {
-            if (chcap == true && chsmall == false && chnum == false && chspec == false)
-            {
-                int r = rand.nextInt(26)+65;
-                password+=(char)r;
-            }
-            if (chcap == false && chsmall == true && chnum == false && chspec == false)
-            {
-                int r = rand.nextInt(26)+97;
-                password+=(char)r;
-            }
-            if (chcap == false && chsmall == false && chnum == true && chspec == false)
-            {
-                int r = rand.nextInt(9)+48;
-                password+=(char)r;
-            }
-            if (chcap == false && chsmall == false && chnum == false && chspec == true)
-            {
-                int r = rand.nextInt(14)+33;
-                password+=(char)r;
-            }
-            if (chcap == true && chsmall == true && chnum == false && chspec == false)
-            {
-                int r = rand.nextInt(14)+33;
-                password+=(char)r;
-            }
-            val--;
-            //okkka
+            while (val != 0) {
+                if (chcap == true && chsmall == false && chnum == false && chspec == false) {
+                    password += (char) (rand.nextInt(26) + 65);
+                }
+                if (chcap == false && chsmall == true && chnum == false && chspec == false) {
+                    password += (char) (rand.nextInt(26) + 97);
+                }
+                if (chcap == false && chsmall == false && chnum == true && chspec == false) {
+                    password += (char) (rand.nextInt(9) + 48);
+                }
+                if (chcap == false && chsmall == false && chnum == false && chspec == true) {
+                    password += (char) (rand.nextInt(14) + 33);
+                }
+                if (chcap == true && chsmall == true && chnum == false && chspec == false) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : rand.nextInt(26) + 97);
+                }
+                if (chcap == true && chsmall == false && chnum == true && chspec == false) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : rand.nextInt(9) + 48);
+                }
+                if (chcap == true && chsmall == false && chnum == false && chspec == true) {
+                    int opt = rand.nextInt(2);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : rand.nextInt(14) + 33);
+                }
+                if (chcap == true && chsmall == true && chnum == true && chspec == false) {
+                    int opt = rand.nextInt(3);
+                    password += (char) ((opt == 0) ? rand.nextInt(26) + 65 : (opt==1)?rand.nextInt(26) + 97:rand.nextInt(9) + 48);
+                }
+                val--;
             }
             Passlabel.setText(password);
         }
