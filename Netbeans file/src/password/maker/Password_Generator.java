@@ -260,9 +260,9 @@ public class Password_Generator extends javax.swing.JFrame {
             Passlabel.setText(password);
         }
         //PassStrengthCalculate ob =new PassStrengthCalculate();
-        int str=PassStrengthCalculate.calculateStrength(password);
+        int str=(PassStrengthCalculate.calculateStrength(password)+1)*25;
         System.out.println(str);
-        Progbar.setValue(100);
+        Progbar.setValue(str);
     }//GEN-LAST:event_SliderStateChanged
 
     private void ChkcapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkcapActionPerformed
