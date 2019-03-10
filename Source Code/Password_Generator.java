@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package password.maker;
-
+import passstrengthcalculate.PassStrengthCalculate;
 import java.util.Random;
-
 /**
  *
  * @author hj101
@@ -260,7 +259,10 @@ public class Password_Generator extends javax.swing.JFrame {
             }
             Passlabel.setText(password);
         }
-        Progbar.setValue(100);
+        //PassStrengthCalculate ob =new PassStrengthCalculate();
+        int str=(PassStrengthCalculate.calculateStrength(password)+1)*25;
+        System.out.println(str);
+        Progbar.setValue(str);
     }//GEN-LAST:event_SliderStateChanged
 
     private void ChkcapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkcapActionPerformed
